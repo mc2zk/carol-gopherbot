@@ -1,0 +1,16 @@
+AdminUsers: [ "mc2zk" ]
+ProtocolConfig:
+  MaxMessageSplit: {{ env "GOPHER_SLACK_MAX_MSGS" | default "2" }}
+  SlackToken: xoxb-{{ decrypt "/9od59wkdrfjKFUrrVGw6dlht3kBOR7iST77xo41Ywz20FKEEC0tsogexpfeKy/RZqUha/r0uSAoO52sNfphqFu30hxexIMr2F4v1PZH" }}
+
+DefaultChannels: [ "general", "random" ]
+
+UserRoster:
+  - UserName: mc2zk
+    UserID: UGV3VT5V3
+  # - UserName: floyd
+  #   UserID: U138KTVCL
+  #   BotUser: true
+        
+{{ $defaultjobchannel := "carol-jobs" }}
+DefaultJobChannel: {{ env "GOPHER_JOBCHANNEL" | default $defaultjobchannel }}
